@@ -1,0 +1,7 @@
+{{*
+R
+node_modules
+*.pyc
+__pycache__
+.*
+!.gitignore

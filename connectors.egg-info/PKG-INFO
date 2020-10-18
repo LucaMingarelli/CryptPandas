@@ -1,0 +1,72 @@
+Metadata-Version: 2.1
+Name: connectors
+Version: 0.0.1
+Summary: UNKNOWN
+Home-page: ....
+Author: Luca Mingarelli
+Author-email: lucamingarelli@me.com
+License: Copyright (c) 2020 Luca Mingarelli
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+Description: # CryptPandas ![](cryptpandas/res/encrypted.svg)
+        
+        
+        [![version](https://img.shields.io/badge/version-0.0.1-success.svg)](#)
+        
+        ## About
+        
+        
+        # Installation
+        
+        
+        ## Example
+        
+        Performing specific queries and returning the results into *pandas dataframes* is easy:
+        ```python
+        import pandas as pd
+        import cryptpandas as crp
+        
+        df = pd.DataFrame({'A': [1,2,3],
+                           'B': ['one', 'one', 'four']})
+        
+        crp.write_encrypted(df, path='file.crypt', password='mypassowrd123')
+        
+        decrypted_df = crp.read_encrypted(path='file.crypt', password='mypassowrd123')
+        
+        print((df == decrypted_df).all().all())
+        ```
+        
+        
+        
+        ### Requirements
+        - `pandas`
+        - `cryptography`
+        
+        # Author
+        Luca Mingarelli, 2020
+        
+        [![Python](https://img.shields.io/static/v1?label=made%20with&message=Python&color=blue&style=for-the-badge&logo=Python&logoColor=white)](#)
+        
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: markdown
