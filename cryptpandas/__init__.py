@@ -1,5 +1,5 @@
 __about__ = "A tool for encryption and decryption of pandas dataframes."
-__version__= '0.0.2'
+__version__= '0.0.3'
 __author__ = 'Luca Mingarelli'
 __email__ = "lucamingarelli@me.com"
 __url__ = "https://github.com/LucaMingarelli/cryptpandas"
