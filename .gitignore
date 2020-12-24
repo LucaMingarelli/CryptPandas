@@ -5,3 +5,7 @@ node_modules
 __pycache__
 .*
 !.gitignore
+build
+*.egg-info
+dist
+README_DEVELOPER.md

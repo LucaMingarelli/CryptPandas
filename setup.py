@@ -1,10 +1,9 @@
 import setuptools
 import cryptpandas as crp 
 
-with open("README.md", "r") as f:
+with open("README.md", 'r') as f:
     long_description = f.read()
-with open("LICENSE.txt", "r") as f:
-    licence = f.read()
+
     
 setuptools.setup(
     name="CryptPandas",
@@ -13,9 +12,9 @@ setuptools.setup(
     author_email=crp.__email__,
     description=crp.__about__,
     url=crp.__url__,
-    license=licence,
+    license='MIT',
     long_description=long_description,
-    long_description_content_type="markdown",
+    long_description_content_type="text/markdown",
     packages=setuptools.find_packages(),
     install_requires=['pandas', 'cryptography','pyarrow'],
     classifiers=["Programming Language :: Python :: 3",
