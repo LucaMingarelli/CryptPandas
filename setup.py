@@ -7,7 +7,7 @@ with open("LICENSE.txt", "r") as f:
     licence = f.read()
     
 setuptools.setup(
-    name="connectors",
+    name="CryptPandas",
     version=crp.__version__, 
     author=crp.__author__,
     author_email=crp.__email__,
@@ -17,10 +17,9 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="markdown",
     packages=setuptools.find_packages(),
-    classifiers=[
-        "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT License",
-        "Operating System :: OS Independent",
-    ],
+    install_requires=['pandas', 'cryptography','pyarrow'],
+    classifiers=["Programming Language :: Python :: 3",
+                 "License :: OSI Approved :: MIT License",
+                 "Operating System :: OS Independent"],
     python_requires='>=3.6',
 )
