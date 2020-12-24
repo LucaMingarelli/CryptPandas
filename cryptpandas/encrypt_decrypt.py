@@ -1,3 +1,6 @@
+"""Created on Tue Dec 23 00:11:29 2020
+@author: Luca Mingarelli
+"""
 import pandas as pd
 import io, base64, os
 from cryptography.fernet import Fernet
