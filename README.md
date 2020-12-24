@@ -8,7 +8,9 @@
 CryptPandas allows you to easily encrypt and decrypt pandas dataframe, regardless of their content.
 
 # Installation
+You can install with pip as:
 
+`pip install cryptpandas`
 
 ## Example
 
