@@ -34,7 +34,7 @@ def _get_key(password, salt=None):
     return key
 
 
-def write_encrypted(df, password, path, salt=None):
+def to_encrypted(df, password, path, salt=None):
     """ Writes pandas.DataFrame to password encrypted file.
     Args:
        df (pandas.DataFrame): The DataFrame to be encrypted.

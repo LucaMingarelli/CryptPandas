@@ -4,8 +4,7 @@ import cryptpandas as crp
 df = pd.DataFrame({'A': [1,2,3],
                    'B': ['one', 'one', 'four']})
 
-
-crp.write_encrypted(df, path='file.crypt', password='mypassowrd123')
+crp.to_encrypted(df, password='mypassowrd123', path='file.crypt')
 
 decrypted_df = crp.read_encrypted(path='file.crypt', password='mypassowrd123')
 

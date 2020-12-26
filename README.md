@@ -1,7 +1,7 @@
 # CryptPandas ![](https://raw.githubusercontent.com/LucaMingarelli/cryptpandas/master/cryptpandas/res/encrypted.svg)
 
 
-[![version](https://img.shields.io/badge/version-0.0.3-success.svg)](#)
+[![version](https://img.shields.io/badge/version-0.1.0-success.svg)](#)
 
 ## About
 
@@ -15,14 +15,15 @@ You can install with pip as:
 ## Example
 
 Encrypting and decrypting your *pandas dataframe* is easy:
+
 ```python
 import pandas as pd
 import cryptpandas as crp
 
-df = pd.DataFrame({'A': [1,2,3],
+df = pd.DataFrame({'A': [1, 2, 3],
                    'B': ['one', 'one', 'four']})
 
-crp.write_encrypted(df, path='file.crypt', password='mypassowrd123')
+crp.to_encrypted(df, password='mypassowrd123', path='file.crypt')
 
 decrypted_df = crp.read_encrypted(path='file.crypt', password='mypassowrd123')
 
@@ -34,14 +35,15 @@ This allows anyone with your chosen password or passphrase to decrypt the conten
 
 For an additional layer of security you can generate your own salt with `cryptpandas.make_salt`.
 For example:
+
 ```python
 import pandas as pd, cryptpandas as crp
 
-df = pd.DataFrame({'A': [1,2,3],
+df = pd.DataFrame({'A': [1, 2, 3],
                    'B': ['one', 'one', 'four']})
 
 my_salt = crp.make_salt()
-crp.write_encrypted(df, path='file.crypt', password='mypassowrd123', salt=my_salt)
+crp.to_encrypted(df, password='mypassowrd123', path='file.crypt', salt=my_salt)
 
 decrypted_df = crp.read_encrypted(path='file.crypt', password='mypassowrd123', salt=my_salt)
 ```
