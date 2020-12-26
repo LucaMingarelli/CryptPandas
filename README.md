@@ -1,7 +1,7 @@
 # CryptPandas ![](https://raw.githubusercontent.com/LucaMingarelli/CryptPandas/master/cryptpandas/res/encrypted.svg)
 
 
-[![version](https://img.shields.io/badge/version-0.1.0-success.svg)](#)
+[![version](https://img.shields.io/badge/version-0.1.1-success.svg)](#)
 
 ## About
 
