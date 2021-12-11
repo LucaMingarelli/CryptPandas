@@ -1,3 +1,4 @@
 pandas
 cryptography
 pyarrow
+cryptpandas
