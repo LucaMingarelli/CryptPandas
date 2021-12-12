@@ -21,6 +21,7 @@ jobs:
     - name: Install dependencies
       run: |
         conda env update --file cryptpandas/tests/environment.yml --name base
+        pip install cryptpandas
     - name: Lint with flake8
       run: |
         conda install flake8
@@ -32,3 +33,12 @@ jobs:
       run: |
         conda install pytest
         pytest cryptpandas/tests/test.py
+    - name: Deploy to conda
+      run: |
+        conda install anaconda-client conda-build
+        conda config --set anaconda_upload no
+        conda build .
+        conda build . --output
+        # anaconda login
+        ls -a
+
