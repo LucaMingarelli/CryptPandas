@@ -9,5 +9,4 @@ dependencies:
   - pandas
   - cryptography
   - pyarrow
-  - cryptpandas
   - pytest
