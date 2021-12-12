@@ -36,8 +36,8 @@ jobs:
     - name: Deploy to conda
       run: |
         conda install anaconda-client conda-build
-        conda config --set anaconda_upload no
-        conda build .
+        # conda config --set anaconda_upload no
+        # conda build .
         # conda build . --output
         # anaconda login
         ls -a
