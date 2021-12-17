@@ -2,7 +2,7 @@
 
 [![CircleCI](https://circleci.com/gh/LucaMingarelli/CryptPandas.svg?style=svg&circle-token=23ad3dc02a697420107b82330e00b944f9ea53ed)](https://app.circleci.com/pipelines/github/LucaMingarelli/CryptPandas)
 [![Build and test GitHub](https://github.com/lucamingarelli/CryptPandas/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/LucaMingarelli/CryptPandas/actions)
-[![version](https://img.shields.io/badge/version-0.1.1-success.svg)](#)
+[![version](https://img.shields.io/badge/version-1.0.0-success.svg)](#)
 [![PyPI Latest Release](https://img.shields.io/pypi/v/CryptPandas.svg)](https://pypi.org/project/CryptPandas/)
 [![License](https://img.shields.io/pypi/l/CryptPandas.svg)](https://github.com/LucaMingarelli/CryptPandas/blob/master/LICENSE.txt)
 [![Downloads](https://static.pepy.tech/personalized-badge/cryptpandas?period=total&units=international_system&left_color=grey&right_color=blue&left_text=Downloads)](https://pepy.tech/project/cryptpandas)
