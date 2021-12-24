@@ -3,7 +3,7 @@ name: Build and test
 on: [push]
 
 jobs:
-  build-linux:
+  build-and-test:
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 5
@@ -32,13 +32,33 @@ jobs:
     - name: Test with pytest
       run: |
         conda install pytest
-        pytest cryptpandas/tests/test.py
-    - name: Deploy to conda
-      run: |
-        conda install anaconda-client conda-build
-        # conda config --set anaconda_upload no
-        # conda build .
-        # conda build . --output
-        # anaconda login
-        ls -a
+        pytest cryptpandas/tests/ --cov-config=.coveragerc --cov=mtalg cryptpandas/tests/ --cov-report xml:cov.xml --junitxml=unit.xml
+    - name: Override coverage source path for Sonar
+      run: sed -i "s/<source>\/home\/runner\/work\/cryptpandas\/cryptpandas\/cryptpandas<\/source>/<source>\/github\/workspace\/cryptpandas<\/source>/g" /home/runner/work/cryptpandas/cryptpandas/cov.xml
+    - name: Store coverage
+      uses: actions/upload-artifact@v2
+      with:
+        name: pytest_reports
+        path: |
+          cov.xml
+          unit.xml
+        
+  sonarcloud:
+    name: SonarCloud
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      - name: Get Pytest reports
+        uses: actions/download-artifact@v2
+        with:
+          name: pytest_reports
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
 
