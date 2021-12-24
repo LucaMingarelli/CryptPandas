@@ -1,0 +1,5 @@
+[run]
+omit =
+    cryptpandas/res/*
+    cryptpandas/tests/*
+    cryptpandas/examples/*
