@@ -21,8 +21,6 @@ jobs:
         conda env update --file cryptpandas/environment.yml --name base
         python -m pip install --upgrade pip
         pip install cryptpandas
-        pip install pytest 
-        pip install pytest-cov
     - name: Lint with flake8
       run: |
         conda install flake8
@@ -34,7 +32,9 @@ jobs:
       run: |
         pytest cryptpandas/tests/ --cov-config=.coveragerc --cov=cryptpandas cryptpandas/tests/ --cov-report xml:cov.xml --junitxml=unit.xml
     - name: Override coverage source path for Sonar
-      run: sed -i "s/<source>\/home\/runner\/work\/cryptpandas\/cryptpandas\/cryptpandas<\/source>/<source>\/github\/workspace\/cryptpandas<\/source>/g" /home/runner/work/cryptpandas/cryptpandas/cov.xml
+      run: |
+      ls -a /home/runner/work/CryptPandas/cryptpandas/
+      sed -i "s/<source>\/home\/runner\/work\/CryptPandas\/cryptpandas\/cryptpandas<\/source>/<source>\/github\/workspace\/CryptPandas<\/source>/g" /home/runner/work/CryptPandas/cryptpandas/cov.xml
     - name: Store coverage
       uses: actions/upload-artifact@v2
       with:
