@@ -31,7 +31,7 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        conda install pytest
+        pip install pytest pytest-cov
         pytest cryptpandas/tests/ --cov-config=.coveragerc --cov=cryptpandas cryptpandas/tests/ --cov-report xml:cov.xml --junitxml=unit.xml
     - name: Override coverage source path for Sonar
       run: sed -i "s/<source>\/home\/runner\/work\/cryptpandas\/cryptpandas\/cryptpandas<\/source>/<source>\/github\/workspace\/cryptpandas<\/source>/g" /home/runner/work/cryptpandas/cryptpandas/cov.xml
