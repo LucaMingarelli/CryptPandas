@@ -5,6 +5,7 @@
 [![version](https://img.shields.io/badge/version-1.0.0-success.svg)](#)
 [![PyPI Latest Release](https://img.shields.io/pypi/v/CryptPandas.svg)](https://pypi.org/project/CryptPandas/)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/153275ef99d84ec89045afedf639ad35)](https://app.codacy.com/gh/LucaMingarelli/CryptPandas?utm_source=github.com&utm_medium=referral&utm_content=LucaMingarelli/CryptPandas&utm_campaign=Badge_Grade_Settings)
+[![Codacy Badge Coverage](https://app.codacy.com/project/badge/Coverage/6e3fd357feba4659be21858c6c7f39f2)](https://www.codacy.com/gh/LucaMingarelli/CryptPandas/dashboard?utm_source=github.com&utm_medium=referral&utm_content=LucaMingarelli/CryptPandas&utm_campaign=Badge_Coverage)
 [![License](https://img.shields.io/pypi/l/CryptPandas.svg)](https://github.com/LucaMingarelli/CryptPandas/blob/master/LICENSE.txt)
 [![Downloads](https://static.pepy.tech/personalized-badge/cryptpandas?period=total&units=international_system&left_color=grey&right_color=blue&left_text=Downloads)](https://pepy.tech/project/cryptpandas)
 

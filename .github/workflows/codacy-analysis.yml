@@ -52,48 +52,48 @@ jobs:
         uses: github/codeql-action/upload-sarif@v1
         with:
           sarif_file: results.sarif
-  build-and-test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Set up Python 3.9
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.9
-      - name: Add conda to system path
-        run: |
-          # $CONDA is an environment variable pointing to the root of the miniconda directory
-          echo $CONDA/bin >> $GITHUB_PATH
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r cryptpandas/requirements.txt
-          pip install cryptpandas
-      - name: Lint with flake8
-        run: |
-          conda install flake8
-          # stop the build if there are Python syntax errors or undefined names
-          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-          # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-          flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-      - name: Test with pytest
-        run: |
-          pytest cryptpandas/tests/ --cov-config=.coveragerc --cov=cryptpandas cryptpandas/tests/ --cov-report xml:cov.xml --junitxml=unit.xml
-      - name: Override coverage source path for Sonar
-        run: |
-          ls -a /home/runner/work/CryptPandas/CryptPandas
-          sed -i "s/<source>\/home\/runner\/work\/CryptPandas\/CryptPandas\/CryptPandas<\/source>/<source>\/github\/workspace\/CryptPandas<\/source>/g" /home/runner/work/CryptPandas/CryptPandas/cov.xml
-      - name: Store coverage
-        uses: actions/upload-artifact@v2
-        with:
-          name: pytest_reports
-          path: |
-            cov.xml
-            unit.xml
-      - name: codacy-coverage-reporter
-        uses: codacy/codacy-coverage-reporter-action@v1
-        with:
-          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-          # or
-          # api-token: ${{ secrets.CODACY_API_TOKEN }}
-          coverage-reports: cov.xml
+#  build-and-test:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v2
+#      - name: Set up Python 3.9
+#        uses: actions/setup-python@v2
+#        with:
+#          python-version: 3.9
+#      - name: Add conda to system path
+#        run: |
+#          # $CONDA is an environment variable pointing to the root of the miniconda directory
+#          echo $CONDA/bin >> $GITHUB_PATH
+#      - name: Install dependencies
+#        run: |
+#          python -m pip install --upgrade pip
+#          pip install -r cryptpandas/requirements.txt
+#          pip install cryptpandas
+#      - name: Lint with flake8
+#        run: |
+#          conda install flake8
+#          # stop the build if there are Python syntax errors or undefined names
+#          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+#          # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+#          flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+#      - name: Test with pytest
+#        run: |
+#          pytest cryptpandas/tests/ --cov-config=.coveragerc --cov=cryptpandas cryptpandas/tests/ --cov-report xml:cov.xml --junitxml=unit.xml
+#      - name: Override coverage source path for Sonar
+#        run: |
+#          ls -a /home/runner/work/CryptPandas/CryptPandas
+#          sed -i "s/<source>\/home\/runner\/work\/CryptPandas\/CryptPandas\/CryptPandas<\/source>/<source>\/github\/workspace\/CryptPandas<\/source>/g" /home/runner/work/CryptPandas/CryptPandas/cov.xml
+#      - name: Store coverage
+#        uses: actions/upload-artifact@v2
+#        with:
+#          name: pytest_reports
+#          path: |
+#            cov.xml
+#            unit.xml
+#      - name: codacy-coverage-reporter
+#        uses: codacy/codacy-coverage-reporter-action@v1
+#        with:
+#          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+#          # or
+#          # api-token: ${{ secrets.CODACY_API_TOKEN }}
+#          coverage-reports: cov.xml
