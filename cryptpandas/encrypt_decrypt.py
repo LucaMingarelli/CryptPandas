@@ -1,4 +1,6 @@
+
 """
+
 Created on Tue Dec 22 00:11:29 2020
 @author: Luca Mingarelli
 """
@@ -67,13 +69,8 @@ def read_encrypted(path, password, salt=None):
     """
     with open(path, 'rb') as f:
         encrypted_df = f.read()
-    
     key = _get_key(password, salt=salt)
     fernet = Fernet(key)
     decrypted = fernet.decrypt(encrypted_df)
-    
     return pd.read_parquet(io.BytesIO(decrypted))
-
-    
-
 
