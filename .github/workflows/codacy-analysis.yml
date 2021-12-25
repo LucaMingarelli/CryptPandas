@@ -66,8 +66,8 @@ jobs:
           echo $CONDA/bin >> $GITHUB_PATH
       - name: Install dependencies
         run: |
-          pip install -r cryptpandas/requirements.txt
           python -m pip install --upgrade pip
+          pip install -r cryptpandas/requirements.txt
           pip install cryptpandas
       - name: Lint with flake8
         run: |
@@ -90,12 +90,7 @@ jobs:
           path: |
             cov.xml
             unit.xml
-  codacy-coverage-reporter:
-    runs-on: ubuntu-latest
-    name: codacy-coverage-reporter
-    steps:
-      - uses: actions/checkout@v2
-      - name: Run codacy-coverage-reporter
+      - name: codacy-coverage-reporter
         uses: codacy/codacy-coverage-reporter-action@v1
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
