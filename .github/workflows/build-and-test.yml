@@ -60,13 +60,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      - name: Analyze with SonarCloud
-        uses: sonarsource/sonarcloud-github-action@master
-        with:
-          projectBaseDir: my-custom-directory
-          args: >
-            -Dsonar.python.coverage.reportPaths=cov.xml
-            -Dsonar.tests=cryptpandas/tests/
-            -Dsonar.verbose=true
 
 
