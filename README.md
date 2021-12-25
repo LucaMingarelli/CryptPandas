@@ -1,5 +1,6 @@
 # CryptPandas ![](https://raw.githubusercontent.com/LucaMingarelli/CryptPandas/master/cryptpandas/res/encrypted.svg)
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/153275ef99d84ec89045afedf639ad35)](https://app.codacy.com/gh/LucaMingarelli/CryptPandas?utm_source=github.com&utm_medium=referral&utm_content=LucaMingarelli/CryptPandas&utm_campaign=Badge_Grade_Settings)
 [![CircleCI](https://circleci.com/gh/LucaMingarelli/CryptPandas.svg?style=svg&circle-token=23ad3dc02a697420107b82330e00b944f9ea53ed)](https://app.circleci.com/pipelines/github/LucaMingarelli/CryptPandas)
 [![Build and test GitHub](https://github.com/lucamingarelli/CryptPandas/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/LucaMingarelli/CryptPandas/actions)
 [![version](https://img.shields.io/badge/version-1.0.0-success.svg)](#)
