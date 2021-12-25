@@ -1,4 +1,5 @@
-"""Created on Tue Dec 22 00:11:29 2020
+"""
+Created on Tue Dec 22 00:11:29 2020
 @author: Luca Mingarelli
 """
 import pandas as pd
@@ -52,7 +53,6 @@ def to_encrypted(df, password, path, salt=None):
     df.to_parquet(f)
     f.seek(0)
     encrypted_df = fernet.encrypt(f.read())
-    
     with open(path, 'wb') as f:
         f.write(encrypted_df)
 

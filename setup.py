@@ -4,7 +4,7 @@ import cryptpandas as crp
 with open("README.md", 'r') as f:
     long_description = f.read()
 
-    
+
 setuptools.setup(
     name="CryptPandas",
     version=crp.__version__,

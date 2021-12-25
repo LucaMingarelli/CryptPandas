@@ -11,12 +11,12 @@
 
 CryptPandas allows you to easily encrypt and decrypt pandas dataframe, regardless of their content.
 
-# Installation
+## Installation
 You can install with pip as:
 
 `pip install cryptpandas`
 
-## Example
+### Example
 
 Encrypting and decrypting your *pandas dataframe* is easy:
 
@@ -59,7 +59,7 @@ Now it is possible to decrypt the encrypted dataframe only if in possession of b
 -   `cryptography`
 -   `pyarrow`
 
-# Author
+## Author
 
 Luca Mingarelli, 2020
 
