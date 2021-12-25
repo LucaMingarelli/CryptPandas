@@ -55,9 +55,9 @@ Now it is possible to decrypt the encrypted dataframe only if in possession of b
 
 ### Requirements
 
-- `pandas`
-- `cryptography`
-- `pyarrow`
+-   `pandas`
+-   `cryptography`
+-   `pyarrow`
 
 # Author
 
