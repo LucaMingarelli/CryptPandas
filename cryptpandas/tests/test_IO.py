@@ -8,18 +8,30 @@ df = pd.DataFrame({'A': [1, 2, 3],
 class TestReadWrite:
   def test_import(self):
     import cryptpandas as crp
+    from cryptpandas.SALT import SALT
     assert crp
-  
+    assert SALT
+
+  def test_get_key(self):
+    from cryptpandas.SALT import SALT
+    key = crp.encrypt_decrypt._get_key(password='ApassWord', salt=SALT)
+    key_val = b'mn68JONFMiJhvbi5mcQ1pzwWYA7mysfDg2w_IaXjwBo='
+    assert key == key_val
+
+  def test_make_salt(self):
+    from cryptpandas import make_salt
+    assert len(make_salt(__size=124)) == 124
+
   def test_read_write(self):
     crp.to_encrypted(df, password='mypassowrd123', path='file.crypt')
     decrypted_df = crp.read_encrypted(path='file.crypt', password='mypassowrd123')
     assert (df == decrypted_df).all().all()
-  
+
   def test_with_salt(self):
     my_salt = crp.make_salt(32)
-    from crp.SALT import SALT
+
     crp.to_encrypted(df, password='mypassword123', path='file.crypt', salt=my_salt)
     decrypted_df = crp.read_encrypted(path='file.crypt', password='mypassword123', salt=my_salt)
     assert (df == decrypted_df).all().all()
-  
+
 
