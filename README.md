@@ -64,4 +64,3 @@ Now it is possible to decrypt the encrypted dataframe only if in possession of b
 Luca Mingarelli, 2020
 
 [![Python](https://img.shields.io/static/v1?label=made%20with&message=Python&color=blue&style=for-the-badge&logo=Python&logoColor=white)](#)
-
