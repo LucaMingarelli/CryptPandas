@@ -4,9 +4,7 @@ import cryptpandas as crp
 df = pd.DataFrame({'A': [1, 2, 3],
                    'B': ['one', 'one', 'four']})
 
-
 def test_import():
-  import cryptpandas as crp
   from cryptpandas.SALT import SALT
   assert crp
   assert SALT

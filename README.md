@@ -7,7 +7,6 @@
 [![License](https://img.shields.io/pypi/l/CryptPandas.svg)](https://github.com/LucaMingarelli/CryptPandas/blob/master/LICENSE.txt)
 [![Downloads](https://static.pepy.tech/personalized-badge/cryptpandas?period=total&units=international_system&left_color=grey&right_color=blue&left_text=Downloads)](https://pepy.tech/project/cryptpandas)
 
-
 ## About
 
 CryptPandas allows you to easily encrypt and decrypt pandas dataframe, regardless of their content.
@@ -53,7 +52,6 @@ crp.to_encrypted(df, password='mypassword123', path='file.crypt', salt=my_salt)
 decrypted_df = crp.read_encrypted(path='file.crypt', password='mypassword123', salt=my_salt)
 ```
 Now it is possible to decrypt the encrypted dataframe only if in possession of both the salt and the password. 
-
 
 ### Requirements
 

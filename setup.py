@@ -1,5 +1,5 @@
 import setuptools
-import cryptpandas as crp 
+import cryptpandas as crp
 
 with open("README.md", 'r') as f:
     long_description = f.read()
@@ -7,7 +7,7 @@ with open("README.md", 'r') as f:
     
 setuptools.setup(
     name="CryptPandas",
-    version=crp.__version__, 
+    version=crp.__version__,
     author=crp.__author__,
     author_email=crp.__email__,
     description=crp.__about__,
