@@ -28,9 +28,9 @@ import cryptpandas as crp
 df = pd.DataFrame({'A': [1, 2, 3],
                    'B': ['one', 'one', 'four']})
 
-crp.to_encrypted(df, password='mypassowrd123', path='file.crypt')
+crp.to_encrypted(df, password='mypassword123', path='file.crypt')
 
-decrypted_df = crp.read_encrypted(path='file.crypt', password='mypassowrd123')
+decrypted_df = crp.read_encrypted(path='file.crypt', password='mypassword123')
 
 print((df == decrypted_df).all().all())
 ```
@@ -56,11 +56,13 @@ Now it is possible to decrypt the encrypted dataframe only if in possession of b
 
 
 ### Requirements
+
 - `pandas`
 - `cryptography`
 - `pyarrow`
 
 # Author
+
 Luca Mingarelli, 2020
 
 [![Python](https://img.shields.io/static/v1?label=made%20with&message=Python&color=blue&style=for-the-badge&logo=Python&logoColor=white)](#)
