@@ -3,3 +3,4 @@ cryptography
 pyarrow
 cryptpandas
 pytest
+pytest-cov
