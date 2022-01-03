@@ -2,8 +2,8 @@
 Created on Tue Dec 22 00:11:29 2020
 @author: Luca Mingarelli
 """
-import pandas as pd
 import io, base64, os
+import pandas as pd
 from cryptography.fernet import Fernet
 from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives import hashes
@@ -75,4 +75,3 @@ def read_encrypted(path, password, salt=None):
     fernet = Fernet(key)
     decrypted = fernet.decrypt(encrypted_df)
     return pd.read_parquet(io.BytesIO(decrypted))
-
