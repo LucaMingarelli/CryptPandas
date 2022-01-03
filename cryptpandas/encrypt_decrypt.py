@@ -11,7 +11,8 @@ from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 from cryptpandas.SALT import SALT
 
 def make_salt(__size=16):
-    """Makes a new salt.
+    """
+    Makes a new salt.
     
     Args:
         __size (int): desired size of salt
