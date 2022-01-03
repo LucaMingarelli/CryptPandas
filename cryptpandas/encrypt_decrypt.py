@@ -21,7 +21,8 @@ def make_salt(__size=16):
     return os.urandom(__size)
 
 def _get_key(password, salt=None):
-    """Generates secret key associated with provided password.
+    """
+    Generates secret key associated with provided password.
     
     Args:
         password (str): Your password or passphrase.
@@ -38,7 +39,8 @@ def _get_key(password, salt=None):
 
 
 def to_encrypted(df, password, path, salt=None):
-    """Writes pandas.DataFrame to password encrypted file.
+    """
+    Writes pandas.DataFrame to password encrypted file.
     
     Args:
        df (pandas.DataFrame): The DataFrame to be encrypted.
@@ -58,7 +60,8 @@ def to_encrypted(df, password, path, salt=None):
 
 
 def read_encrypted(path, password, salt=None):
-    """Reads a previously encrypted file into a pandas.DataFrame.
+    """
+    Reads a previously encrypted file into a pandas.DataFrame.
     
     Args:
        path (str):     Path from which to read the encrypted file.
