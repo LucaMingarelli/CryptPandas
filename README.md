@@ -9,6 +9,7 @@
 [![Snyk Security Score](https://snyk-widget.herokuapp.com/badge/pip/cryptpandas/1.0.0/badge.svg)](https://snyk.io/vuln/pip:CryptPandas)
 [![License](https://img.shields.io/pypi/l/CryptPandas.svg)](https://github.com/LucaMingarelli/CryptPandas/blob/master/LICENSE.txt)
 [![Downloads](https://static.pepy.tech/personalized-badge/cryptpandas?period=total&units=international_system&left_color=grey&right_color=blue&left_text=Downloads)](https://pepy.tech/project/cryptpandas)
+[![Run on Repl.it](https://repl.it/badge/github/lucamingarelli/cryptpandas)](https://replit.com/@lucamingarelli/Try-out-CryptPandas#main.py)
 
 ## About
 
