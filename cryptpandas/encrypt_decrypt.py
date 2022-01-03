@@ -14,7 +14,7 @@ from cryptpandas.SALT import SALT
 def make_salt(__size=16):
     """
     Makes a new salt.
-    
+
     Args:
         __size (int): desired size of salt
 
