@@ -33,16 +33,15 @@ def test_with_salt():
   assert (df == decrypted_df).all().all()
 
 def test_read_write_with_buffer():
+  PASSWORD = 'mypassword123'
   path = io.BytesIO()
-  crp.to_encrypted(df, password='mypassowrd123', 
+  crp.to_encrypted(df, password=PASSWORD, 
                    path=path)
 
-  # TODO: TEST this works as exptected
+  path.seek(0)
 
-  # TODO: same for read_encrypted
-
-  decrypted_df = crp.read_encrypted(path=..., 
-                                    password='mypassowrd123')
-  assert (df == decrypted_df).all().all()
+  decrypted_df = crp.read_encrypted(path=path, 
+                                    password=PASSWORD)
+  assert df.equals(decrypted_df)
 
 

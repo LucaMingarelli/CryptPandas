@@ -75,7 +75,7 @@ def read_encrypted(path, password, salt=None):
        salt:           Salt for data encryption; if `None` (default) uses a default salt.
     """
     if type(path) == io.BytesIO:
-        encrypted_df = path.read().decode()
+        encrypted_df = path.read()
     else:
         with open(path, 'rb') as f:
             encrypted_df = f.read()
