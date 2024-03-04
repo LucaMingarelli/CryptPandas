@@ -3,7 +3,9 @@ Created on Tue Dec 22 00:11:29 2020
 @author: Luca Mingarelli
 """
 import io, base64, os
+
 import pandas as pd
+
 from cryptography.fernet import Fernet
 from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives import hashes
@@ -33,7 +35,7 @@ def _get_key(password, salt=None):
     kdf = PBKDF2HMAC(algorithm=hashes.SHA256(),
                      length=32,
                      salt=salt or SALT,
-                     iterations=100000,
+                     iterations=100_000,
                      backend=default_backend())
     key = base64.urlsafe_b64encode(kdf.derive(enpassword))   # You can use kfd only once
     return key
@@ -73,7 +75,7 @@ def read_encrypted(path, password, salt=None):
        salt:           Salt for data encryption; if `None` (default) uses a default salt.
     """
     if type(path) == io.BytesIO:
-        encrypted_df = path.read()
+        encrypted_df = path.read().decode()
     else:
         with open(path, 'rb') as f:
             encrypted_df = f.read()
@@ -81,3 +83,5 @@ def read_encrypted(path, password, salt=None):
     fernet = Fernet(key)
     decrypted = fernet.decrypt(encrypted_df)
     return pd.read_parquet(io.BytesIO(decrypted))
+
+
