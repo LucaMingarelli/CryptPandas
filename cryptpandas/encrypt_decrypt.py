@@ -56,8 +56,11 @@ def to_encrypted(df, password, path, salt=None):
     df.to_parquet(f)
     f.seek(0)
     encrypted_df = fernet.encrypt(f.read())
-    with open(path, 'wb') as f:
-        f.write(encrypted_df)
+    if type(path) == io.BytesIO:
+        path.write(encrypted_df)
+    else:
+        with open(path, 'wb') as f:
+            f.write(encrypted_df)
 
 
 def read_encrypted(path, password, salt=None):
@@ -69,8 +72,11 @@ def read_encrypted(path, password, salt=None):
        password (str): Unique password used to encrypt the file.
        salt:           Salt for data encryption; if `None` (default) uses a default salt.
     """
-    with open(path, 'rb') as f:
-        encrypted_df = f.read()
+    if type(path) == io.BytesIO:
+        encrypted_df = path.read()
+    else:
+        with open(path, 'rb') as f:
+            encrypted_df = f.read()
     key = _get_key(password, salt=salt)
     fernet = Fernet(key)
     decrypted = fernet.decrypt(encrypted_df)
