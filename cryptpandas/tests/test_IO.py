@@ -23,14 +23,14 @@ def test_make_salt():
 def test_read_write():
   crp.to_encrypted(df, password='mypassowrd123', path='file.crypt')
   decrypted_df = crp.read_encrypted(path='file.crypt', password='mypassowrd123')
-  assert (df == decrypted_df).all().all()
+  assert df.equals(decrypted_df)
 
 def test_with_salt():
   my_salt = crp.make_salt(32)
 
   crp.to_encrypted(df, password='mypassword123', path='file.crypt', salt=my_salt)
   decrypted_df = crp.read_encrypted(path='file.crypt', password='mypassword123', salt=my_salt)
-  assert (df == decrypted_df).all().all()
+  assert df.equals(decrypted_df)
 
 def test_read_write_with_buffer():
   PASSWORD = 'mypassword123'
