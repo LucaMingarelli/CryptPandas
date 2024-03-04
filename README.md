@@ -2,7 +2,7 @@
 
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/LucaMingarelli/CryptPandas/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/LucaMingarelli/CryptPandas/tree/master)
 [![Build and test GitHub](https://github.com/lucamingarelli/CryptPandas/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/LucaMingarelli/CryptPandas/actions)
-[![version](https://img.shields.io/badge/version-1.0.0-success.svg)](#)
+[![version](https://img.shields.io/badge/version-1.0.1-success.svg)](#)
 [![PyPI Latest Release](https://img.shields.io/pypi/v/CryptPandas.svg)](https://pypi.org/project/CryptPandas/)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/153275ef99d84ec89045afedf639ad35)](https://app.codacy.com/gh/LucaMingarelli/CryptPandas?utm_source=github.com&utm_medium=referral&utm_content=LucaMingarelli/CryptPandas&utm_campaign=Badge_Grade_Settings)
 [![Codacy Badge Coverage](https://app.codacy.com/project/badge/Coverage/6e3fd357feba4659be21858c6c7f39f2)](https://www.codacy.com/gh/LucaMingarelli/CryptPandas/dashboard?utm_source=github.com&utm_medium=referral&utm_content=LucaMingarelli/CryptPandas&utm_campaign=Badge_Coverage)
