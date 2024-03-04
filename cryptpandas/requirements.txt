@@ -1,6 +1,6 @@
 pandas
 cryptography
-pyarrow
+pyarrow>=14.0.1
 cryptpandas
 pytest
 pytest-cov
