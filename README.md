@@ -1,6 +1,6 @@
 # CryptPandas ![](https://raw.githubusercontent.com/LucaMingarelli/CryptPandas/master/cryptpandas/res/encrypted.svg)
 
-[![CircleCI](https://circleci.com/gh/LucaMingarelli/CryptPandas.svg?style=svg&circle-token=23ad3dc02a697420107b82330e00b944f9ea53ed)](https://app.circleci.com/pipelines/github/LucaMingarelli/CryptPandas)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/LucaMingarelli/CryptPandas/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/LucaMingarelli/CryptPandas/tree/master)
 [![Build and test GitHub](https://github.com/lucamingarelli/CryptPandas/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/LucaMingarelli/CryptPandas/actions)
 [![version](https://img.shields.io/badge/version-1.0.0-success.svg)](#)
 [![PyPI Latest Release](https://img.shields.io/pypi/v/CryptPandas.svg)](https://pypi.org/project/CryptPandas/)
